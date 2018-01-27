@@ -1,0 +1,24 @@
+# Compiled class file
+*.class
+
+
+*.log
+
+
+.idea
+*.iws
+*.iml
+*.ipr
+
+target
+logs
+build
+dist
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
