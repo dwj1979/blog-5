@@ -1,0 +1,44 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: blog
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?charset=utf-8
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: none
+  session:
+    store-type: none
+
+gong:
+  security:
+    browser:
+      signInPage: "/signIn.html"
+      loginType: "JSON"
+    validateCode:
+      imgCode:
+        length: "6"
+        width: "100"
+        urls: "/user;/user/*"
+    social:
+      qq:
+        appId: "123"
+        appSecret: "456"
+    service:
+      storage:
+        uploadDir: "f:/temp"
+
+logging:
+    home: "logs"
+    name: "blog"
+    level:
+        root: "info"
+        com.gong: "debug"
+security:
+  basic:
+    enabled: false
+

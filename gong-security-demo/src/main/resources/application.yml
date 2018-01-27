@@ -1,0 +1,35 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: demo
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security?charset=utf-8
+    username: root
+    password: 123456
+  session:
+    store-type: none
+gong:
+  security:
+    browser:
+      signInPage: "/signIn.html"
+      loginType: "JSON"
+    validateCode:
+      imgCode:
+        length: "6"
+        width: "100"
+        urls: "/user;/user/*"
+    social:
+      qq:
+        app-id:
+        app-secret:
+
+
+logging:
+    home: "logs"
+    name: "sell"
+    level:
+        root: "info"
+        org.springframework: "info"
+        com.gong: "debug"
