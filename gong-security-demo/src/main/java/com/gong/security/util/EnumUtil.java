@@ -1,6 +1,6 @@
 package com.gong.security.util;
 
-import com.gong.security.enums.IEnum;
+import com.gong.security.util.enums.IEnum;
 
 /**
  * Created by GongWenHua on 17.12.17.

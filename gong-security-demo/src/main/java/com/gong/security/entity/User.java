@@ -4,7 +4,7 @@ package com.gong.security.entity;
  * Created by GongWenHua on 17.12.11.
  */
 
-import com.gong.security.validator.MyConstraint;
+import com.gong.security.util.validator.MyConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotBlank;

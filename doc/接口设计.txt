@@ -1,0 +1,72 @@
+1.路由规范
+    /article
+    /comment
+    /draft
+
+
+    增：POST
+    {
+    "/"
+    }
+
+    删：DELETE
+    索引策略1
+
+    改：PUT
+    索引策略2
+
+    查：GET
+    索引策略1
+
+    索引策略1 子索引sub(如：user)
+    {
+    "/",   //  all                          getArticlesAll
+    "/{articleId}",                         getArticleByArticleId
+    "/page",        //  page ?arg           getArticlesByPage
+    "/sub/{subId}",// user all              getArticlesByUserId
+    "/sub/{subId}/page"//  user page ?arg   getArticlesByUserIdAndPage
+    }
+
+    索引策略2 子索引sub(如：user)
+    {
+    "/",   //  all
+    "/{articleId}",
+    "/sub/{subId}"// user all
+    }
+
+2.返回值规范
+一般请求
+{
+"code": 100,
+"msg": "成功",
+"data": {}
+}
+分页请求
+{
+  "code": 100,
+  "msg": "成功",
+  "pagination": {
+    "last":false,           // 是否最后一页
+    "totalPages":9,         // 所有页数
+    "totalElements":123,    // 所有个数
+    "size":15,              // 每页大小
+    "number":0,             // 当前页数
+    "first":true,           // 是否值开头页
+    "numberOfElements":15   // 当前页数量
+  "data": {}
+}
+失败请求：
+{
+"code": -1000,
+"msg": "用户名或密码错误"
+}
+
+3.相应规范
+200：请求成功
+201：创建、修改成功
+204：删除成功
+400：参数错误
+401：未登录
+403：禁止访问
+404：未找到
+500：系统错误

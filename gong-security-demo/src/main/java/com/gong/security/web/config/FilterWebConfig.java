@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by GongWenHua on 17.12.17.
  */
-@Configuration
+//@Configuration
 public class FilterWebConfig extends WebMvcConfigurerAdapter {
 
 //    @Bean

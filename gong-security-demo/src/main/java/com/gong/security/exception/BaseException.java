@@ -1,6 +1,6 @@
 package com.gong.security.exception;
 
-import com.gong.security.enums.ExceptionStatusEnum;
+import com.gong.security.util.enums.ExceptionStatusEnum;
 
 /**
  * Created by GongWenHua on 17.12.17.

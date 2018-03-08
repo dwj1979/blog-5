@@ -1,5 +1,6 @@
 package com.gong.security.vo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.io.Serializable;
  * Created by SNOW on 2018.01.18.
  */
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResultVO<T> implements Serializable
 {
     private static final long serialVersionUID = 5216059160426137256L;
@@ -20,13 +22,16 @@ public class ResultVO<T> implements Serializable
     /** 具体内容 */
     private T data;
 
-    public ResultVO(){
+    /** 分页信息 **/
+    private Pagination pagination;
 
+    public ResultVO(){
     }
 
-    public ResultVO(Integer code,String message,T data){
+    public ResultVO(Integer code,String message,T data,Pagination pagination){
         this.code = code;
         this.message = message;
         this.data = data;
+        this.pagination = pagination;
     }
 }

@@ -30,8 +30,27 @@ public class ArticleRepositoryTest {
         for (int i = 0; i < 10; i++) {
             Article article = new Article();
             article.setTitle("Getting Started with Sleek");
-            article.setContent("In case you want to add a hero image to the post, apart from changing featured-img in YAML, you also need to add the image file to the project. To do so, just upload an image in .jpg format to _img folder. The name must before the .jpg file extension has to match with featured-img in YAML. Next, run gulp img from command line to generate optimized version of the image and all the thumbnails. You have to restart the jekyll server to see the changes. Sleek uses (Lazy Sizes)[https://github.com/aFarkas/lazysizes] Lazy Loader for loading images. Check the link for more info. Lazy Sizes doesnt’t require any configuration and it’s going to be included in your bundled js file.");
-            article.setImgUrl("1.jpg");
+            article.setContentMd("### 123123\n" +
+                    "# 123\n" +
+                    "## 123234\n" +
+                    "1.   有序列表\n" +
+                    "\n" +
+                    "```java\n" +
+                    "    Integer getNum(){\n" +
+                    "        return 123\n" +
+                    "    }\n" +
+                    "```");
+            article.setContentHtml("<h3>123123</h3>\n" +
+                    "<h1>123</h1>\n" +
+                    "<h2>123234</h2>\n" +
+                    "<ol>\n" +
+                    "<li>有序列表</li>\n" +
+                    "</ol>\n" +
+                    "<pre><div class=\"hljs\"><code class=\"lang-java\">    <span class=\"hljs-function\">Integer <span class=\"hljs-title\">getNum</span><span class=\"hljs-params\">()</span></span>{\n" +
+                    "        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">123</span>\n" +
+                    "    }\n" +
+                    "</code></div></pre>");
+            article.setTitleImgUrl("1.jpg");
             Article result = articleRepository.save(article);
             log.debug("" + result);
         }

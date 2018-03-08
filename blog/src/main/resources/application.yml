@@ -1,5 +1,7 @@
 server:
   port: 9999
+  context-path: /blog
+
 spring:
   application:
     name: blog
@@ -10,7 +12,11 @@ spring:
     password: 123456
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
+  jackson:
+    date-format: MMMM dd,yyyy
+    locale: en
+    default-property-inclusion: non_null
   session:
     store-type: none
 

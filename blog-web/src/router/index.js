@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home/home'
-
+import article from './article'
+import write from './write'
+import index from '@/component/index'
 Vue.use(Router)
 
 const routers = [
   {
     path: '/',
-    name: 'home',
-    component: home
+    component: index,
+    redirect: '/home',
+    children: [
+      article,
+      write
+    ]
   }
 ]
 

@@ -1,20 +1,30 @@
 package com.gong.security.vo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.util.Date;
-import java.util.Locale;
 
 /**
  * Created by SNOW on 201 8.01.25.
  */
 @Data
 public class ArticleVO {
-    private String imgUrl;
+    private String articleId;
+    // 标题图片
+    private String titleImgUrl;
+    // 标题
     private String title;
-    @JsonFormat(pattern = "MMM d, yyyy",locale = "en_GB")
-    private Date createTime;
-    private Date updateTime;
-    private String content;
+    // html 文本
+    private String contentHtml;
+    // markdown 文本
+    private String contentMd;
+    // text 文本
+    private String contentText;
+    // 用户ID
+    private String userId;
+
+    protected Boolean enable = true;
+    protected Date createTime = new Date();
+    protected Date updateTime = new Date();
 }

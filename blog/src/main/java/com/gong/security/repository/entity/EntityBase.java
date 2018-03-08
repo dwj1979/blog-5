@@ -1,10 +1,6 @@
 package com.gong.security.repository.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
@@ -15,10 +11,7 @@ import java.util.Date;
 @Data
 @MappedSuperclass
 public class EntityBase {
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
-    private Date createTime;
-    private Date updateTime;
+    protected Boolean enable = true;
+    protected Date createTime = new Date();
+    protected Date updateTime = new Date();
 }
